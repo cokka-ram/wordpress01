@@ -17,7 +17,19 @@
 <body>
 	<header>
 		<div class="logo-area">
-				<img src="<?php echo get_template_directory_uri(); ?>/img/site-logo_bk.svg" alt="rental space MdN">
+				<!-- <img src="<?php echo get_template_directory_uri(); ?>/img/site-logo_bk.svg" alt="rental space MdN"> -->
+		<?php
+		$custom_logo_id = get_theme_mod( 'custom_logo' );
+		$image = wp_get_attachment_image_src( $custom_logo_id, 'full' );
+		
+		$html  = '<img src="' . $image[0] . '"';
+		$html .= ' width="' . $image[1] . '"';
+		$html .= ' height="' . $image[2] . '"';
+		$html .= ' alt="' . esc_attr(get_bloginfo( 'name' )) . '"';
+		$html .= '>';
+		echo $html;
+		?>
+		
 		</div>
 		<nav class="sp-only">
 			<div class="gnav-toggle">
