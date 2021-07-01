@@ -149,51 +149,12 @@
 										以下のドメインを受信できるように設定をお願いいたします。<br>
 										<span class="txt-lead">@example.com</span>
 								</p>
-								<form action="#" method="POST">
-										<table class="l-form">
-												<tr>
-														<th>企業名</th>
-														<td><input type="text" name="company" placeholder="例）株式会社〇〇"></td>
-												</tr>
-												<tr>
-														<th class="required">氏名</th>
-														<td><input type="text" name="name" required placeholder="例）山田太郎"></td>
-												</tr>
-												<tr>
-														<th>電話番号</th>
-														<td><input type="tel" name="tel" placeholder="例）0000000000（ハイフンなし）"></td>
-												</tr>
-												<tr>
-														<th class="required">メールアドレス</th>
-														<td><input type="email" name="email" required placeholder="例）info@example.com"></td>
-												</tr>
-												<tr>
-														<th class="required">お問い合わせ項目</th>
-														<td>
-																<ul>
-																		<li>
-																				<input type="radio" name="kind" value="サービスについて" id="kind_01">
-																				<label for="kind_01">サービスについて</label>
-																		</li>
-																		<li>
-																				<input type="radio" name="kind" value="プランについて" id="kind_02">
-																				<label for="kind_02">プランについて</label>
-																		</li>
-																		<li>
-																				<input type="radio" name="kind" value="その他" id="kind_03">
-																				<label for="kind_03">その他</label>
-																		</li>
-																</ul>
-														</td>
-												</tr>
-												<tr>
-														<th class="required">お問い合わせ内容</th>
-														<td><textarea name="detail" cols="40" rows="10" required></textarea></td>
-												</tr>
-										</table>
-										<div class="submit-btn">
-												<input type="submit" value="同意して送信する">
-										</div>
+								<?php 
+								if( shortcode_exists( 'contact-form-7' ) ){
+								echo do_shortcode( '[contact-form-7 id="20" title="コンタクトフォーム 1"]' );
+								}
+								?>
+								<!-- <form action="#" method="POST"> -->
 										<div class="contact-policy">
 												<h4>個人情報の取扱について</h4>
 												<p>
@@ -206,7 +167,8 @@
 														個人情報保護管理責任者
 												</p>
 										</div>
-								</form>
+								<!-- </form> -->
+								<!-- [contact-form-7 id="20" title="コンタクトフォーム 1"] -->
 						</div>
 					</section>
 				<nav id="pagetop" class="pagetop">
